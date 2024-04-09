@@ -154,7 +154,7 @@ export const CommentApp = () => {
     _.orderBy(defaultList, "like", "desc")
   );
 
-  const receiveUpdateFromChild = (newUpdate: Comment[]) => {
+  const HandleUpdate = (newUpdate: Comment[]) => {
     setCommentList(newUpdate);
   };
 
@@ -193,11 +193,11 @@ export const CommentApp = () => {
     }
   };
 
-  const handleNewCommentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  const HandleChangeComment = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setNewCommentValue(e.currentTarget.value);
   };
 
-  const newPostHandler = () => {
+  const HandleNewPost = () => {
     addNewComments();
   };
 
@@ -246,10 +246,10 @@ export const CommentApp = () => {
             <textarea
               className="reply-box-textarea"
               value={newCommentValue}
-              onChange={handleNewCommentChange}
+              onChange={HandleChangeComment}
               placeholder="tell something..."
             />
-            <div className="reply-box-send" onClick={newPostHandler}>
+            <div className="reply-box-send" onClick={HandleNewPost}>
               <div className="send-text">post</div>
             </div>
           </div>
@@ -257,7 +257,7 @@ export const CommentApp = () => {
         {/* Send state variable to Child component */}
         <Item
           addCommentList={commentList}
-          onGetUpdate={receiveUpdateFromChild}
+          onGetUpdate={HandleUpdate}
         />
       </div>
     </div>
