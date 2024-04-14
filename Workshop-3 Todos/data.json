@@ -1,0 +1,24 @@
+{
+    "todos": [
+        {
+            "id": "1",
+            "name": "Eat",
+            "done": true
+        },
+        {
+            "id": "2",
+            "name": "Shopping",
+            "done": false
+        },
+        {
+            "id": "3",
+            "name": "Sleep",
+            "done": false
+        },
+        {
+            "id": "4",
+            "name": "Shower",
+            "done": false
+        }
+    ]
+}
